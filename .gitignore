@@ -1,0 +1,21 @@
+# Virtual environment
+.venv/
+
+# Raw data files
+data/
+
+# DuckDB database files
+*.duckdb
+
+# dbt
+transform/target/
+transform/dbt_packages/
+transform/logs/
+
+# Logs
+logs/
+
+# Python
+__pycache__/
+*.pyc
+.env
