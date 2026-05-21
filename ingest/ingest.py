@@ -23,7 +23,7 @@ def get_urls(spend_headings):
     return urls
 
 def download_files(urls):
-    path = pathlib.Path(__file__).parent / "data"
+    path = pathlib.Path(__file__).parent.parent / "data"
     path.mkdir(exist_ok=True)
     for url in urls:
         filename = url.split("/")[-1]
