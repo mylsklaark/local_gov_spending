@@ -40,7 +40,7 @@ The benefits of this approach include:
 - Contained changes — if the source data changes, then only staging needs to be adjusted. Everything built on top of this remains the same
 - Self-documenting — understanding the data's provenance and the transformations that have been applied to it can be easily understood
 
-![DAG](assets/dag.png)
+![DAG](assets/local_gov_spending_dag.png)
 
 ## Marts
 
