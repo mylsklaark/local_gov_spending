@@ -1,0 +1,22 @@
+models:
+  - name: stg_spending
+    description: This table contains the staging data for spending records, sourced from the raw_spending table in the main schema.
+    columns:
+      - name: supplier_description
+        description: The name of the supplier
+      - name: document_number
+        description: The document number associated with the spending record
+      - name: posting_date
+        description: The date when the spending was posted
+      - name: service
+        description: The service associated with the spending record. Where none is provided, the record is categorised as 'Uncategorised'.
+        data_tests:
+          - not_null
+      - name: gl_code_id
+        description: The general ledger code ID associated with the spending record
+      - name: gl_code_description
+        description: The description of the general ledger code associated with the spending record
+      - name: net_amount
+        description: The net amount of the spending record
+        data_tests:
+          - not_null
