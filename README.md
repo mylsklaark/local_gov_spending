@@ -1,8 +1,12 @@
 # local_gov_spending
 
+![Python](https://img.shields.io/badge/Python-3.13.2-blue)
+![dbt](https://img.shields.io/badge/dbt-1.11.11-orange)
+![DuckDB](https://img.shields.io/badge/DuckDB-1.2.2-yellow)
+
 This project demonstrates how to ingest, load, and analyse local government spending data. It uses data which is shared in line with the UK government's [Local Government Transparency Code](https://www.gov.uk/government/publications/local-government-transparency-code-2015/local-government-transparency-code-2015). This stipulates that all expenditure exceeding £500 must be published.
 
-This data pipeline downloads Oxfordshire County Council's monthly transparency spending data (transactions over £500, published as open Excel sheets), loads it into DuckDB, and uses dbt to model it into analytical layers.
+This data pipeline downloads Oxfordshire County Council's monthly transparency spending data (published as open Excel sheets), loads it into DuckDB, and uses dbt to model it into analytical layers.
 
 To reengineer this for use with another local authority's data set, the following would need to be considered:
 - extraction logic

@@ -1,8 +1,7 @@
-# Ingestion script: downloads OCC spending CSVs and loads them into DuckDB
+# Ingestion script: downloads OCC spending Excel files and loads them into DuckDB
 import requests
 import pathlib
 from bs4 import BeautifulSoup
-import openpyxl
 import logging
 
 def get_headings(headings):

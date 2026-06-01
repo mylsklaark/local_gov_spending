@@ -12,10 +12,10 @@ renamed as (
         "Supplier: Description" as supplier_description,
         "Document Number" as document_number,
         "Posting Date" as posting_date,
-        CASE WHEN "Service" = '' THEN 'Uncategorised' ELSE "Service" END as service,
+        case when "Service" = '' then 'Uncategorised' else "Service" end as service,
         "GL Code: ID" as gl_code_id,
         "GL Code: Description" as gl_code_description,
-        CAST("Net Amount" AS DECIMAL) as net_amount
+        cast("Net Amount" as decimal) as net_amount
     from source
 
 )
