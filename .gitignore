@@ -1,6 +1,9 @@
 # Virtual environment
 .venv/
 
+# Jupyter Notebook
+ingest.ipynb
+
 # Raw data files
 data/
 

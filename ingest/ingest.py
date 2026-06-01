@@ -3,6 +3,7 @@ import requests
 import pathlib
 from bs4 import BeautifulSoup
 import openpyxl
+import logging
 
 def get_headings(headings):
     spend_headings = []
@@ -14,12 +15,12 @@ def get_headings(headings):
 def get_urls(spend_headings):
     urls = []
     for h in spend_headings:
-            ul = h.find_next_sibling("ul")
-            for a in ul.find_all("a"):
-                href = a.get("href")
-                if href.endswith(".xlsx"):
-                    link = "https://www.oxfordshire.gov.uk" + href
-                    urls.append(link)
+        ul = h.find_next_sibling("ul")
+        for a in ul.find_all("a"):
+            href = a.get("href")
+            if href.endswith(".xlsx"):
+                link = "https://www.oxfordshire.gov.uk" + href
+                urls.append(link)
     return urls
 
 def download_files(urls):
@@ -30,6 +31,7 @@ def download_files(urls):
         response = requests.get(url)
         with open(path / filename, "wb") as f:
             f.write(response.content)
+        logging.info(f"Downloaded {filename}")
             
 def main():
     url = "https://www.oxfordshire.gov.uk/council/about-your-council/council-tax-and-finance/financial-transparency"
@@ -41,4 +43,5 @@ def main():
     download_files(urls)
     
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
     main()
